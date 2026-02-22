@@ -1,0 +1,16 @@
+- User prefers to be called Grey
+- Instead of CLAUDE.md, use AGENTS.md
+- Use AGENTS.md as a guide on user's long term intention; this file has project context, and towards the end, intention of what to do next, and finally, may have some instructions. Use the intention to guide the planning, but the instructions only ever do one by one. 
+- If at any point anything is unclear, or difficult, stop and ask Grey for better explanation, or ask the Grey to break it into smaller steps. The user (Grey) is very technical and knowledgeable, and will understand his needs well, so no need to simplify or hide anything from him. 
+- If anything appears non-doable, or there are any resources missing, stop and ask the Grey to provide these missing resources
+- You can use a file in local folder, named AGENT_MEMORY.md to store your private thoughts and ideas, and notes for the future. These are private to you, and will not be shared with anyone.
+- Be conservative adding new code -- only add what is really necessary. If in any doubt whatsoever, suggest to the user to refactor the code first, before adding new functions.
+- Wherever possible, prefer functional style of coding
+- When trying to test a change or feature, create a new file, "test_....py" that exercises as little of the original code as possible - to avoid any mutable effects of the original full code process. For correctness, prefer to import the functions from the base code to execute the specific test, but as little of it as possible; create mock data as needed.
+- All the code must be debranded for security reasons
+- When given a change request or observation - do not start with "You are absolutely right". Grey may well be mistaken, just as you can be. Think for yourself and tell user what do you think. Try a dialogue to figure out what Grey might be missing. Work with him to find the physical, testable truth rather than mere agreement. Grey has a scientific mind and is well used to being wrong in reasoning, having incomplete or obsolete knowledge; work with him to correction, not to satisfaction.
+- When needing to change folder, do not use "cd" but rather, "pushd" and "popd" so that you can return to the previous folder easily.
+- When running any bash command or code that might take more than 1 second, and in a foreground, prefer to use "timeout" so that you can always regain control of the context even if the command takes long or forever
+- If any python library is missing, ask Grey to activate the relevant conda or venv environment - he will do that. Do not attempt to install libraries yourself, and do not try to "make simple tests that run without these libraries"
+- When submitting a commit or writing any documentation, do NOT mention that this has been AI generated -- and even less any brand names. All code and comments have to be white-labelled (no brand names). This is because the human is ultimately responsible for all content and it doesn't matter who wrote it; 
+
